@@ -25,7 +25,7 @@ const Container = styled.div`
 `
 
 function CartControll() {
-  const { value } = useLocalStarage('cart-items')
+  const { value } = useLocalStarage('cart-items', [])
   return (
     <Container>
       <FiShoppingBag size={24} color="#737380" />
