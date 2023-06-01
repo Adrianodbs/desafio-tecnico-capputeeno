@@ -21,7 +21,7 @@ export const TagHeader = styled.header`
 export const Logo = styled.a`
   color: var(--logo-color);
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 150%;
 
   @media(min-width: ${props => props.theme.tableBreakpoint}){
