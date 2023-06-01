@@ -16,6 +16,7 @@ interface ProductsListProps {}
 
 function ProductsList(props: ProductsListProps) {
   const { data } = useProducts()
+
   return (
     <ListContainer>
       {data?.map(product => (
@@ -24,6 +25,7 @@ function ProductsList(props: ProductsListProps) {
           title={product.name}
           price={product.price_in_cents}
           image={product.image_url}
+          id={product.id}
         />
       ))}
     </ListContainer>
