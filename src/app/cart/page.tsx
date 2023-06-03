@@ -21,6 +21,8 @@ function CartPage() {
   }
 
   const cartTotal = formatPrice(calculateTotal(value))
+  const deliveryFee = 4000
+  const cartTotalWithDelivery = formatPrice(calculateTotal(value) + deliveryFee)
 
   const handleUpdateQuantity = (id: string, quantity: number) => {
     const newValue = value.map(item => {
@@ -58,6 +60,24 @@ function CartPage() {
             ))}
           </C.CartList>
         </C.CartListContainer>
+
+        <C.CartResultContainer>
+          <h3>Resumo do Pedido</h3>
+          <C.TotalItem isBold={false}>
+            <p>Subtotal de produtos</p>
+            <p>{cartTotal}</p>
+          </C.TotalItem>
+          <C.TotalItem isBold={false}>
+            <p>Entrega</p>
+            <p>{formatPrice(deliveryFee)}</p>
+          </C.TotalItem>
+          <C.Divider />
+          <C.TotalItem isBold>
+            <p>Total</p>
+            <p>{cartTotalWithDelivery}</p>
+          </C.TotalItem>
+          <C.ShopBtn>FINALIZAR A COMPRA</C.ShopBtn>
+        </C.CartResultContainer>
       </C.Container>
     </DefaultPageLayout>
   )

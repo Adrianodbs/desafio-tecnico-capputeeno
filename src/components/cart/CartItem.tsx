@@ -2,6 +2,7 @@ import { ProductInCart } from '@/types/product'
 import * as C from './style'
 import { formatPrice } from '@/utils/formatPrice'
 import { ChangeEvent } from 'react'
+import { BsTrash } from 'react-icons/bs'
 
 interface CartItemProps {
   product: ProductInCart
@@ -19,6 +20,9 @@ function CartItem({
   }
   return (
     <C.Item>
+      <button onClick={() => handleDelete(product.id)} aria-label="Deletar">
+        <BsTrash size={18} color="#DE3838" />
+      </button>
       <img src={product.image_url} alt={product.name} />
       <div>
         <h4>{product.name}</h4>

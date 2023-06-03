@@ -16,7 +16,9 @@ function Header() {
   const { setSearch, search } = useFilter()
   return (
     <C.TagHeader>
-      <C.Logo className={sairaStencial.className}>Capputeeno</C.Logo>
+      <C.Logo href="/" className={sairaStencial.className}>
+        Capputeeno
+      </C.Logo>
       <div className="right">
         <PrimaryInputWSearchIcon
           value={search}
